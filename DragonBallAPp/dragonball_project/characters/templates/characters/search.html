@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buscar Personajes de Dragon Ball</title>
+</head>
+<body>
+    <h1>Buscar Personajes de Dragon Ball</h1>
+    <form method="get">
+        <input type="text" name="query" value="{{ query }}" placeholder="Nombre del personaje">
+        <button type="submit">Buscar</button>
+    </form>
+    <ul>
+        {% for character in characters %}
+            <li>
+                <h2>{{ character.name }}</h2>
+                <img src="{{ character.image }}" alt="{{ character.name }}">
+                <p>{{ character.description }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
